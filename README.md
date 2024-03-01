@@ -5,6 +5,7 @@
 <a name="Sections"></a>
 1. [What is GraphQL?](#What_is_GraphQL)
 2. [Query Basics](#Query_Basics)
+3. [Making a GraphQL Server](#Making_a_GraphQL_Server)
 
 [Useful Commands](#Useful_Commands)
 
@@ -18,8 +19,8 @@ ________________________________________________________________________________
     - A specific syntax that we can use to query a server to request or mutate data
 - Kind of like an alternative to the more traditional approach of sending standard requests to a rest API using endpoints
 - GraphQL still uses http requests under the hood.
-GraphQL gives us more flexibility and control about how we make requests and what data we want to fetch or mutate.
-- GraphQL prevents over fetching and under fetching
+    - GraphQL gives us more flexibility and control about how we make requests and what data we want to fetch or mutate.
+- GraphQL prevents over fetching and under fetching.
 
 #### How to use it
 - When we send a request using GraphQL to a server, we typically do that to a single endpoint
@@ -60,6 +61,12 @@ Query {
 __________________________________________________________________________________________________________________________________________
 <a name="Query_Basics"></a>
 ## 2. Query Basics - [video](https://www.youtube.com/watch?v=39CPVkZE4nM&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=2)
+- In this lesson we look at examples of how to query a database running on a nodemon server using studio.apollographql.com
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Making_a_GraphQL_Server"></a>
+## 3. Making a GraphQL Server - [video](https://www.youtube.com/watch?v=q6MxsS2iPnw&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=3)
 - 
 
 [Back to top](#Sections)
