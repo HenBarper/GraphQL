@@ -67,12 +67,35 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________________
 <a name="Making_a_GraphQL_Server"></a>
 ## 3. Making a GraphQL Server - [video](https://www.youtube.com/watch?v=q6MxsS2iPnw&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=3)
-- 
+[Getting Started with GraphQL on studio.apollographql.com documentation](https://www.apollographql.com/docs/apollo-server/getting-started#step-1-create-a-new-project)
+1. We start by getting into our project directory
+2. Then we Initialize a new Node.js project with npm (or another package manager you prefer, such as Yarn):
+    - `npm init --yes && npm pkg set type="module"`
+        - This creates our package.json and sets the type to module allowing us to use ES6 imports and top level await functions
+3. Install dependencies
+    - Applications that run Apollo Server require two top-level dependencies
+        - graphql & @apolloserver
+        - run `npm install @apollo/server graphql`
+4. Define our GraphQL schema
+    - Create an index.js file
+    - View index.js in directory: 3-Making_a_GraphQL_Server
+
+### Additional Notes
+- The Apollo server takes in an object as an argument
+    - That object expects two properties
+        - **typeDefs:** descriptions of our data types and the relationship they have with other data types
+        - **resolvers:** functions that determine how we respond to queries for different data on the graph 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
 <a name="Useful_Commands"></a>
 ## Useful Commands
+
+### Setup
+- `npm init --yes && npm pkg set type="module"`
+    - Creates the package.json and sets the type to module allowing ES6 imports
+- `npm install @apollo/server graphql`
+    - Installs the necessary dependencies to run an Apollo server
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
