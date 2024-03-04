@@ -9,6 +9,7 @@
 4. [Schema and Types](#Schema_and_Types)
 
 [Useful Commands](#Useful_Commands)
+[Other](#Other)
 
 [Credits](#Credits)
 __________________________________________________________________________________________________________________________________________
@@ -91,7 +92,45 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________________________
 <a name="Schema_and_Types"></a>
 ## 4. Schema and Types - [video](https://www.youtube.com/watch?v=ginCmJEdZ0g&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=4)
-- 
+- What are **typedefs**?
+    - Definitions of the different types of data we want to expose on our graph
+        - Example: A game type might have a price, a title, a platform etc...
+- What is a **schema**?
+    - The combination of all of the different types, their relationship to other types, and the kind of queries that can be made
+    - Something that describes the shape of the graph and the data availbale on it
+    - Normally your GraphQL schema, the data that's available on the graph, will be fairly similar to the data you're storing on your application database
+- There are five basic scalar types built into GraphQL
+    - int, float, string, boolean, and ID
+        - GraphQL uses the ID type as a key for data objects
+- Use `#graphql additional_code` to enable graphql syntax highlighting
+- Defining data types
+    - Add an exclamation point to make a field required. Otherwise it's allowed to be *NULL*
+```
+type Game {
+        id: ID!
+        title: String!
+        platform: [String!]!
+
+    }
+```
+    - The exclamtion point inside the `[String!]!` signifies that the elements of the array can't be null
+    - The one on the outside signifies that the array itself must be an array and can't be null
+
+- **Query** type
+    - Every GraphQL schema must have a query type
+    - It defines the entry points to the graph and specify the return types of those entry points
+    ```
+    type Query {
+        reviews: [Reviews]
+    }
+    ```
+    - The above code specifies that a you can query the graph with 'reviews' to get an array/list of reviews
+        - But that is the only entry point to the graph
+        - You can get other data through relations but not directly
+    - We can gatekeep data in this way
+- You can think of the schema and the typDefs as a map for Apollo to structure the graph
+    - But they dont actually handle any queries
+    - Then we set up Resolver function to actually handle the queries
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
@@ -103,6 +142,16 @@ ________________________________________________________________________________
     - Creates the package.json and sets the type to module allowing ES6 imports
 - `npm install @apollo/server graphql`
     - Installs the necessary dependencies to run an Apollo server
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Other"></a>
+## Other
+
+### Extensions
+- GraphQL: Syntax Highlighting - GraphQL Foundation
+    - Adds syntax highlighting support for .graphql & embedded support for javascript, typescript, vue, markdown, python, php, reason, ocaml and rescript...
+
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________

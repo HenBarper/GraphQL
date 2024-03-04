@@ -9,7 +9,8 @@ import { startStandaloneServer } from '@apollo/server/standalone'
 
 // Server setup
 const server = new ApolloServer({
-    //code
+    // Typedefs
+    // Resolvers
 })
 
 const { url } = await startStandaloneServer(server, {

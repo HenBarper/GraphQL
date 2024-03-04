@@ -4,12 +4,18 @@ import { ApolloServer } from '@apollo/server'
 // Starts the server so we can start listening for requests
 import { startStandaloneServer } from '@apollo/server/standalone'
 
+// Types
+import { typeDefs } from './schema.js'
+
 // For the above import statements to work the type in package.json must be module
 
 
 // Server setup
 const server = new ApolloServer({
-    //code
+    // Typedefs -- Definitions of the types of data
+    typeDefs,
+    // Resolvers -- Resolver Functions are there for us to handle any incoming requests and return data to the clients
+    
 })
 
 const { url } = await startStandaloneServer(server, {
