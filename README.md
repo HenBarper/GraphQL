@@ -6,6 +6,7 @@
 1. [What is GraphQL?](#What_is_GraphQL)
 2. [Query Basics](#Query_Basics)
 3. [Making a GraphQL Server](#Making_a_GraphQL_Server)
+4. [Schema and Types](#Schema_and_Types)
 
 [Useful Commands](#Useful_Commands)
 
@@ -85,6 +86,12 @@ ________________________________________________________________________________
     - That object expects two properties
         - **typeDefs:** descriptions of our data types and the relationship they have with other data types
         - **resolvers:** functions that determine how we respond to queries for different data on the graph 
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Schema_and_Types"></a>
+## 4. Schema and Types - [video](https://www.youtube.com/watch?v=ginCmJEdZ0g&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=4)
+- 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
