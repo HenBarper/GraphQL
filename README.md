@@ -137,7 +137,18 @@ type Game {
 __________________________________________________________________________________________________________________________________________
 <a name="Resolver_Functions"></a>
 ## 5. Resolver Functions - [video](https://www.youtube.com/watch?v=mjqfYgFyziU&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=5)
-- 
+- In our index.js we can create a variable that will store all of our resolver functions
+- We must name them exactly as they are in the schema
+- Apollo handles all the specific data separation
+    - All we have to do is make sure the function is returning the proper data sets
+- In order for this all to work we need to pass in the typeDefs and resolvers variable to the ApolloServer()
+```
+const server = new ApolloServer({
+    typeDefs,
+    resolvers
+})
+```
+- When you run your server and visit **localhost:port_number** the Apollo Server and GUI will be running there automatically.
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
