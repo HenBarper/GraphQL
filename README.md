@@ -7,6 +7,7 @@
 2. [Query Basics](#Query_Basics)
 3. [Making a GraphQL Server](#Making_a_GraphQL_Server)
 4. [Schema and Types](#Schema_and_Types)
+5. [Resolver Functions](#Resolver_Functions)
 
 [Useful Commands](#Useful_Commands)
 [Other](#Other)
@@ -131,6 +132,12 @@ type Game {
 - You can think of the schema and the typDefs as a map for Apollo to structure the graph
     - But they dont actually handle any queries
     - Then we set up Resolver function to actually handle the queries
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Resolver_Functions"></a>
+## 5. Resolver Functions - [video](https://www.youtube.com/watch?v=mjqfYgFyziU&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=5)
+- 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
