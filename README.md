@@ -113,8 +113,8 @@ type Game {
 
     }
 ```
-    - The exclamtion point inside the `[String!]!` signifies that the elements of the array can't be null
-    - The one on the outside signifies that the array itself must be an array and can't be null
+- The exclamtion point inside the `[String!]!` signifies that the elements of the array can't be null
+- The one on the outside signifies that the array itself must be an array and can't be null
 
 - **Query** type
     - Every GraphQL schema must have a query type
