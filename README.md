@@ -8,6 +8,7 @@
 3. [Making a GraphQL Server](#Making_a_GraphQL_Server)
 4. [Schema and Types](#Schema_and_Types)
 5. [Resolver Functions](#Resolver_Functions)
+6. [Query Variables](#Query_Variables)
 
 [Useful Commands](#Useful_Commands)
 [Other](#Other)
@@ -149,6 +150,12 @@ const server = new ApolloServer({
 })
 ```
 - When you run your server and visit **localhost:port_number** the Apollo Server and GUI will be running there automatically.
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Query_Variables"></a>
+## 6. Query Variables - [video](https://www.youtube.com/watch?v=joMO4LwRa5Q&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=6)
+- 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
