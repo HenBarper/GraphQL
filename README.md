@@ -9,6 +9,7 @@
 4. [Schema and Types](#Schema_and_Types)
 5. [Resolver Functions](#Resolver_Functions)
 6. [Query Variables](#Query_Variables)
+7. [Related Data](#Related_Data)
 
 [Useful Commands](#Useful_Commands)
 [Other](#Other)
@@ -181,6 +182,13 @@ review(_, args) {
 
 - You can use variables to pass into the query to receive specific information
 ![example of querying on Apollo](/1_query_example.png "Query example 1")
+
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Related_Data"></a>
+## 7. Related Data - [video](https://www.youtube.com/watch?v=2oy0Uw5jUxc&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=7)
+- 
 
 
 [Back to top](#Sections)
