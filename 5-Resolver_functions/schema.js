@@ -10,7 +10,7 @@ export const typeDefs = `#graphql
 
     type Review {
         id: ID!
-        reating: Int!
+        rating: Int!
         content: String!
     }
     type Author {
