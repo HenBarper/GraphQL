@@ -155,7 +155,33 @@ const server = new ApolloServer({
 __________________________________________________________________________________________________________________________________________
 <a name="Query_Variables"></a>
 ## 6. Query Variables - [video](https://www.youtube.com/watch?v=joMO4LwRa5Q&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=6)
-- 
+- In the previous query we were only able to query for all the Reviews, Games or Authors
+```
+type Query {
+    reviews: [Review]
+    games: [Game]
+    authors: [Author]
+}
+```
+- We can add a query for an individual review as follows: `review(id: ID!): Review`
+    - 'id' - the name of the variable we include in the query to get a specific review
+    - 'ID!' - the type of the variable and it is required to be such because of the '!'
+- Resolver functions can take in three arguments
+    - `resolver_function(parent, args, context)`
+        - Parent - the parent resolver function in the hierarchy
+        - Args - Any query variable sent with the query
+        - Context(optional) - Used for spying context variables across all of our resolvers, auth info etc...
+- We add the following to our index.js to our resolvers variable in the query
+```
+review(_, args) {
+    return db.reviews.find((review) => review.id === args.id)
+},
+```
+- The above example looks through our reviews array, finds a review where the id matches the passed in args' id and return it
+
+- You can use variables to pass into the query to receive specific information
+![example of querying on Apollo](/1_query_example.png "Query example 1")
+
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
