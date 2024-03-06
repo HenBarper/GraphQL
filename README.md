@@ -10,6 +10,7 @@
 5. [Resolver Functions](#Resolver_Functions)
 6. [Query Variables](#Query_Variables)
 7. [Related Data](#Related_Data)
+8. [Mutations](#Mutations)
 
 [Useful Commands](#Useful_Commands)
 [Other](#Other)
@@ -211,6 +212,14 @@ Game: {
 ![example of querying on Apollo 3](/images/3_query_example.PNG)
 - Because of the way our reviews are chained we can continually nest querires inside one another
 ![example of querying on Apollo 4](/images/4_query_example.PNG)
+
+
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Mutations"></a>
+## 8. Related Data - [video](https://www.youtube.com/watch?v=MnDbZK6B8uE&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=8)
+- Mutations in GraphQL is about adding and deleting data
 
 
 

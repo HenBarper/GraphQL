@@ -1,4 +1,4 @@
-// 5-schema.js
+// 6-schema.js
 
 // We have to export our typeDefs so they can be imported into our GraphQL server
 export const typeDefs = `#graphql
