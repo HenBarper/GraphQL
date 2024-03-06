@@ -107,6 +107,15 @@ ________________________________________________________________________________
     - int, float, string, boolean, and ID
         - GraphQL uses the ID type as a key for data objects
 - Use `#graphql additional_code` to enable graphql syntax highlighting
+```
+export const typeDefs = `#graphql
+    type Query {
+        reviews: [Reviews]
+        games: [Game]
+        authors: [Author]
+    }
+`
+```
 - Defining data types
     - Add an exclamation point to make a field required. Otherwise it's allowed to be *NULL*
 ```
