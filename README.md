@@ -170,8 +170,10 @@ type Query {
 - Resolver functions can take in three arguments
     - `resolver_function(parent, args, context)`
         - Parent - the parent resolver function in the hierarchy
+            - In this example we've replaced parent with '_' because we won't be using it just yet
         - Args - Any query variable sent with the query
         - Context(optional) - Used for spying context variables across all of our resolvers, auth info etc...
+            - We've left this parameter out because we aren't using it in this example
 - We add the following to our index.js to our resolvers variable in the query
 ```
 review(_, args) {
@@ -181,14 +183,35 @@ review(_, args) {
 - The above example looks through our reviews array, finds a review where the id matches the passed in args' id and return it
 
 - You can use variables to pass into the query to receive specific information
-![example of querying on Apollo](/1_query_example.png "Query example 1")
+![example of querying on Apollo 1](/1_query_example.png)
 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
 <a name="Related_Data"></a>
 ## 7. Related Data - [video](https://www.youtube.com/watch?v=2oy0Uw5jUxc&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=7)
-- 
+- In this sections we're linking data so that you can...
+    - Reviews based on a game
+    - Authors based on reviews
+    - Games based on reviews
+    - Reviews based on authors
+- Rather than adding new resolver functions to our Query object we'll create new objects inside the resolver object for Game, Review, and Author
+```
+Game: {
+    reviews(parent) {
+        return db.reviews.filter((review) => review.game_id === parent.id)
+    }
+}
+```
+- In the above example, which we've added below the Query object in index.js, we're looking through reviews for ones whose game id matches the id of a particular game
+
+- We can use variables for very specific queries
+![example of querying on Apollo 2](/2_query_example.png)
+- Or we can remove the variables and query for more broad data
+![example of querying on Apollo 3](/3_query_example.png)
+- Because of the way our reviews are chained we can continually nest querires inside one another
+![example of querying on Apollo 4](/4_query_example.png)
+
 
 
 [Back to top](#Sections)
