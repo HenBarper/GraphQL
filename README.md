@@ -183,7 +183,7 @@ review(_, args) {
 - The above example looks through our reviews array, finds a review where the id matches the passed in args' id and return it
 
 - You can use variables to pass into the query to receive specific information
-![example of querying on Apollo 1](/images/1_query_example.png)
+![example of querying on Apollo 1](/images/1_query_example.PNG)
 
 
 [Back to top](#Sections)
