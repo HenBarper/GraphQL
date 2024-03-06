@@ -206,11 +206,11 @@ Game: {
 - In the above example, which we've added below the Query object in index.js, we're looking through reviews for ones whose game id matches the id of a particular game
 
 - We can use variables for very specific queries
-![example of querying on Apollo 2](https://raw.githubusercontent.com/henbarper/GraphQL/main/images/2_query_example.png)
+![example of querying on Apollo 2](/images/2_query_example.PNG)
 - Or we can remove the variables and query for more broad data
-![example of querying on Apollo 3](https://raw.githubusercontent.com/henbarper/GraphQL/main/images/3_query_example.png)
+![example of querying on Apollo 3](/images/3_query_example.PNG)
 - Because of the way our reviews are chained we can continually nest querires inside one another
-![example of querying on Apollo 4](https://raw.githubusercontent.com/henbarper/GraphQL/main/images/4_query_example.png)
+![example of querying on Apollo 4](/images/4_query_example.PNG)
 
 
 
