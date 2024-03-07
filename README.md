@@ -11,6 +11,7 @@
 6. [Query Variables](#Query_Variables)
 7. [Related Data](#Related_Data)
 8. [Mutations](#Mutations)
+9. [Update Mutation](#Update_Mutation)
 
 [Useful Commands](#Useful_Commands)
 [Other](#Other)
@@ -227,7 +228,7 @@ Game: {
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
 <a name="Mutations"></a>
-## 8. Related Data - [video](https://www.youtube.com/watch?v=MnDbZK6B8uE&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=8)
+## 8. Mutations - [video](https://www.youtube.com/watch?v=MnDbZK6B8uE&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=8)
 - A mutation is a generic term in GraphQL for any kind of change we can make to the data
     - Adding, deleting, etc...
 - To define mutations we add a mutations type to our schema: `type Mutation {}`
@@ -275,7 +276,7 @@ deleteGame(_, args) {
 ![example of querying on Apollo 6](/images/6_query_example.PNG)
 #### Getting games after running deleteGame()
 ![example of querying on Apollo 7](/images/7_query_example.PNG)
-- To create a shema to add data we can create an input object to pass in multiple arguments
+- To create a schema to add data we can create an input object to pass in multiple arguments
 ```
 type Mutation {
     addGame(game: AddGameInput!): Game
@@ -308,6 +309,12 @@ addGame(_, args) {
 ![example of querying on Apollo 9](/images/9_query_example.PNG)
 #### Getting games after running addGame()
 ![example of querying on Apollo 10](/images/10_query_example.PNG)
+
+[Back to top](#Sections)
+__________________________________________________________________________________________________________________________________________
+<a name="Update_Mutations"></a>
+## 9. Update Mutations - [video](https://www.youtube.com/watch?v=2wWNslOgfhU&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=9)
+- 
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
