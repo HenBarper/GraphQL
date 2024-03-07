@@ -314,7 +314,39 @@ addGame(_, args) {
 __________________________________________________________________________________________________________________________________________
 <a name="Update_Mutations"></a>
 ## 9. Update Mutations - [video](https://www.youtube.com/watch?v=2wWNslOgfhU&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=9)
-- 
+- To create update one of our games we'll first create the mutation in our schema
+```
+type Mutation {
+    updateGame(id: ID!, edits: EditGameInput!): Game
+}
+input EditGameInput {
+    title: String,
+    platform: [String!]
+}
+```
+- We pass in the id separately because it is not an edit, it's how we found the game
+- We created a new input type since in this case all fields aren't required
+    - We may want to update one of the fields but not both
+- Then we create our resolver functions to actually update the database
+```
+updateGame(_, args) {
+    db.games = db.games.map((game) => {
+        if (game.id === args.id) {
+            return {...game, ...args.edits}
+        }
+        return game
+    })
+    return db.games.find((game) => game.id === args.id)
+}
+```
+- Here we're setting the games in the database equal to the database's games array, after finding the matching id and replacing it's values with those from the edits argument
+- Then we are returning the updated game based in it's id
+#### Getting games before running updateGame()
+![example of querying on Apollo 11](/images/11_query_example.PNG)
+#### Running the updateGame() mutation
+![example of querying on Apollo 12](/images/12_query_example.PNG)
+#### Getting games after running updateGame()
+![example of querying on Apollo 13](/images/13_query_example.PNG)
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
