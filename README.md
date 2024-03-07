@@ -228,9 +228,86 @@ Game: {
 __________________________________________________________________________________________________________________________________________
 <a name="Mutations"></a>
 ## 8. Related Data - [video](https://www.youtube.com/watch?v=MnDbZK6B8uE&list=RDCMUCW5YeuERMmlnqo4oq8vwUpg&index=8)
-- Mutations in GraphQL is about adding and deleting data
-
-
+- A mutation is a generic term in GraphQL for any kind of change we can make to the data
+    - Adding, deleting, etc...
+- To define mutations we add a mutations type to our schema: `type Mutation {}`
+- An example mutation would be to delete a game
+```
+type Mutation {
+    deleteGame(id: ID!): [Game]
+}
+```
+- In this example we pass in an id so we know which game to delete and return a list of games with the intent to return the remaining games
+    - So we name the function, specify an object to act on, and the return type. `functionName(varName: varType): returnType`
+- Next we'd add a resolver function for our mutation in a mutation object alongside our other resolver objects
+```
+const resolvers = {
+    Query: {
+        // Resolvers
+    },
+    Game: {
+        // Resolvers
+    },
+    Author: {
+        // Resolvers
+    },
+    Review: {
+        // Resolvers
+    },
+    Mutation: {
+        deleteGame()
+    }
+}
+```
+- Here is our example function to delete a game
+```
+deleteGame(_, args) {
+    db.games = db.games.filter((game) => game.id !== args.id)
+    return db.games
+}
+```
+- In this case we don't use the parent argument, but we do use the args to get the id
+- we set the value of db.games to db.games after the game with the matching id is filtered out
+- Then we return the new list of games
+#### Getting games before running deleteGame()
+![example of querying on Apollo 5](/images/5_query_example.PNG)
+#### Running the deleteGame() mutation
+![example of querying on Apollo 6](/images/6_query_example.PNG)
+#### Getting games after running deleteGame()
+![example of querying on Apollo 7](/images/7_query_example.PNG)
+- To create a shema to add data we can create an input object to pass in multiple arguments
+```
+type Mutation {
+    addGame(game: AddGameInput!): Game
+    deleteGame(id: ID!): [Game]
+}
+input AddGameInput {
+    title: String!,
+    platform: [String!]!
+}
+```
+- Then we create our addGame() resolver function
+```
+addGame(_, args) {
+    let game = {
+        ...args.game,
+        id: Math.floor(Math.random() * 10000).toString() // Usually we'd generate a GUID or something similar here instead of a random number
+    }
+    db.games.push(game)
+    return game
+}
+```
+- We create a variable to store our game object `let game = {...}`
+- Set it's values to those passed in by the args `...args.game`
+- Generate an id
+- Push the game object to the database
+- Return the new game object
+#### Getting games before running addGame()
+![example of querying on Apollo 8](/images/8_query_example.PNG)
+#### Running the addGame() mutation
+![example of querying on Apollo 9](/images/9_query_example.PNG)
+#### Getting games after running addGame()
+![example of querying on Apollo 10](/images/10_query_example.PNG)
 
 [Back to top](#Sections)
 __________________________________________________________________________________________________________________________________________
